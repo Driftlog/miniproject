@@ -1,8 +1,10 @@
+<div class="background">
+<mat-card class="title">Added Event!</mat-card>
+<h3 *ngIf="sendEmail"> An email will be sent to you shortly</h3>
 
-<h1> Added Event!</h1>
-<h2> An email will be sent to you shortly</h2>
+<mat-divider> </mat-divider>
 
-<h2> Here are the event details</h2>
+<h2> Event Details</h2>
 
 <p>
   Your event at {{newEvent.location}} will be held from {{newEvent.startDate| date: 'medium'}}
@@ -16,6 +18,4 @@
 
 
 <app-event-details [event]="newEvent"></app-event-details>
-
-
-<a [routerLink]="['/userhome', userID]"> Return home?</a>
+</div>

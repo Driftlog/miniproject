@@ -22,6 +22,8 @@ export class DisplayrouteComponent {
 
   calendarID !: string
   newEvent !: Event
+  sendEmail : boolean = false
+
   userID!: string
   imageURL !: string | undefined
 
@@ -31,8 +33,14 @@ export class DisplayrouteComponent {
     this.userID = "1"
     this.userID = localStorage.getItem("userID") as string
     const eventID = this.activatedRoute.snapshot.params['eventID']
-    this.userSvc.getEvent(eventID).then(event => this.newEvent = event as Event
-      ).catch((error) =>
+
+    this.userSvc.getEvent(eventID).then(event => {this.newEvent = event as Event
+
+      if (this.newEvent.sendMail) {
+          this.sendEmail = this.newEvent.sendMail
+      }
+    }
+    ).catch((error) =>
     {
       console.log(error)
 

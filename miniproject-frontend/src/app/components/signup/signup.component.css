@@ -11,7 +11,6 @@ fieldset {
   max-width: 400px;
   margin: auto;
 
-
 }
 
 .title {
@@ -21,6 +20,7 @@ fieldset {
 
 form {
   text-align: center;
+  margin-top: 100px;
 }
 
 
@@ -29,8 +29,8 @@ form {
   display: flex;
   align-items: center;
   justify-content: center;
+  padding-right: 100px;
 
-  
   height: 100%;
 }
 
