@@ -1,7 +1,7 @@
 
  .form-fieldset {
   width: 400px;
- 
+  margin: 0 auto
 
  }
 
@@ -10,7 +10,5 @@
  }
 
  googleMap {
-  display: flex;
-
-
+  text-align: center;
  }
