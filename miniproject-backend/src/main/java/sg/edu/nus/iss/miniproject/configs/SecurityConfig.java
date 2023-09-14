@@ -28,7 +28,7 @@ public class SecurityConfig {
             .sessionManagement(customizer -> customizer.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
             .authorizeHttpRequests((requests) -> requests
                 .requestMatchers(HttpMethod.POST, "/**","/login", "/api/login", "/api/register", "/user/sendMail", "/user/postEvent/**").permitAll()
-                .requestMatchers(HttpMethod.GET, "/assets/**", "/", "/*", "/user/getEvent/**", "user/getEvents/**").permitAll()
+                .requestMatchers(HttpMethod.GET, "/assets/**", "/", "/**", "/user/getEvent/**", "user/getEvents/**").permitAll()
                 .requestMatchers(HttpMethod.DELETE, "/user/deleteEvent").permitAll()
                 .anyRequest().authenticated());
         return http.build();

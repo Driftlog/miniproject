@@ -9,7 +9,8 @@ import { Router } from '@angular/router';
 export class HomepageComponent implements OnInit{
 
   router = inject(Router)
-  
+  eventID = "01HA6SF"
+  userID = "1"
 
   ngOnInit() {
 
