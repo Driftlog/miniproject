@@ -53,6 +53,7 @@ public class userService {
     public boolean createEvent(Event event, String userID) {
 
         if (this.userRepo.createEvent(event) > 0) {
+            System.out.println(event.getEventID());
             return this.userRepo.createRSVP(userID, event.getEventID()) > 0;
         }
 

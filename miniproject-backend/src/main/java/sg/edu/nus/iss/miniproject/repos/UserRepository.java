@@ -151,6 +151,9 @@ public class UserRepository {
 
     public Integer createRSVP( String userID, String eventID) {
 
+        System.out.println(eventID + " is eventID");
+        System.out.println(userID + "is userID");
+        System.out.println("running");
         return jdbcTemplate.update(Constants.SQL_CREATE_RSVP, userID, eventID);
     }
 
