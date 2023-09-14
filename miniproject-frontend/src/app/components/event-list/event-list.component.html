@@ -1,0 +1,54 @@
+
+
+<h1> Event List </h1>
+
+<mat-divider></mat-divider>
+
+<section *ngIf="eventsList; else noEvents">
+<div *ngFor="let event of eventsList; let i = index">
+  <mat-card>
+
+    <mat-card-header>
+      <mat-card-title>Event {{i}}</mat-card-title>
+      <mat-card-subtitle>
+       <h3> {{event.startDate | date : "longDate"}} - {{event.endDate | date : "longDate"}}</h3>
+       <h4>{{event.location}}</h4>
+      </mat-card-subtitle>
+      <mat-card-subtitle>
+      <h3>Departure Time: </h3>
+       {{event.departureTime| date: "shortTime"}}
+      </mat-card-subtitle>
+    </mat-card-header>
+      <mat-card-content>
+
+        <div *ngIf="event.comments">
+          <h2> Event Description</h2>
+          {{event.comments}}
+        </div>
+      </mat-card-content>
+      <mat-card-footer>
+      <h5>Event Period:</h5>
+       <h6> {{event.startDate | date: "medium"}} - {{event.endDate | date: "medium"}} </h6>
+      </mat-card-footer>
+
+  </mat-card>
+  <mat-divider></mat-divider>
+  <button (click)="deleteEvent(i)">Delete Event</button>
+  <button (click)="moreDetails(i)"> More Details </button>
+</div>
+
+</section>
+
+<ng-template #noEvents>
+  <p> There doesn't seem to be any events...</p>
+</ng-template>
+
+
+
+
+
+
+
+
+
+<a [routerLink]="['/userhome', userID]"> Return home</a>

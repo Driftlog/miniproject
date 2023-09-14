@@ -1,0 +1,23 @@
+
+
+  <h1>Log In Here!</h1>
+
+<form [formGroup]="loginForm" (ngSubmit)="login()">
+  <p>
+  <mat-form-field>
+  Email: <input formControlName="email" required matInput>
+  </mat-form-field>
+  </p>
+
+  <p>
+  <mat-form-field>
+  Password: <input formControlName="password" required matInput>
+  </mat-form-field>
+  </p>
+
+  <br>
+  <button type="submit" mat-raised-button> Login </button>
+</form>
+
+
+

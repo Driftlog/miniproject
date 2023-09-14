@@ -1,0 +1,44 @@
+<h1> Sign Up Here!</h1>
+
+
+<form [formGroup]="signUpForm" (ngSubmit)="signUp()">
+
+  <div>
+    <mat-form-field>
+      Enter name! <input matInput formControlName="userName" type="string" >
+    </mat-form-field>
+  </div>
+
+  <div>
+    <mat-form-field>
+      Enter your password: <input matInput formControlName="userPassword" type="string" >
+    </mat-form-field>
+  </div>
+
+  <div>
+    <mat-form-field>
+      Enter your email: <input matInput formControlName="email" type="string" >
+    </mat-form-field>
+  </div>
+
+  <div>
+    <mat-form-field>
+      Enter your address: <input matInput formControlName="address" type="string" >
+    </mat-form-field>
+  </div>
+
+  <div>
+    <mat-form-field>
+      Enter your phone number: <input matInput formControlName="phoneNumber" type="number" >
+    </mat-form-field>
+  </div>
+
+  <div>
+      Display image : <input formControlName="image" type="file" accept="image/*" #file>
+  </div>
+
+  <button type="submit"> All done! </button>
+
+</form>
+
+

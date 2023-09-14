@@ -1,0 +1,28 @@
+.background {
+  background-image: url(/assets/simon-english-48nerZQCHgo-unsplash.jpg);
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+}
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  font-family:sans-serif;
+  color:floralwhite;
+}
+.centerButtons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.buttons {
+  display: inline-block;
+  color: white;
+  background-color: ghostwhite;
+  border-color: black;
+  border-style: groove;
+  margin-right: 20px;
+}

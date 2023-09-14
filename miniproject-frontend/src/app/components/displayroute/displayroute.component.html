@@ -1,0 +1,21 @@
+
+<h1> Added Event!</h1>
+<h2> An email will be sent to you shortly</h2>
+
+<h2> Here are the event details</h2>
+
+<p>
+  Your event at {{newEvent.location}} will be held from {{newEvent.startDate| date: 'medium'}}
+  to {{newEvent.endDate | date: 'medium'}}. You are advised to depart at {{newEvent.departureTime | date: 'mediumTime'}}, at the latest.
+</p>
+
+<h2>Event Description</h2>
+<p *ngIf="newEvent.comments">
+    {{newEvent.comments}}
+</p>
+
+
+<app-event-details [event]="newEvent"></app-event-details>
+
+
+<a [routerLink]="['/userhome', userID]"> Return home?</a>

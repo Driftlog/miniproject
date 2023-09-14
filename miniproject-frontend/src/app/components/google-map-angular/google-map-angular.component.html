@@ -1,0 +1,87 @@
+<fieldset class="form-fieldset">
+
+
+
+  <h2> Before the event starts...</h2>
+  <div class="my-google-map">
+    <google-map
+    #googleMap
+    id="googlemap"
+    (mapClick)="onMapClick($event)"
+    [options]="options"
+    [zoom]="zoom"
+    [center]="center"
+    >
+
+    <div>
+    <button (click)="resetFields()">Reset locations</button>
+    </div>
+
+    </google-map>
+  </div>
+  <br>
+
+  <form [formGroup]="travelForm" (ngSubmit)="processForm()">
+    <fieldset>
+    <div class="form-field">
+    <mat-form-field>
+      Where are you coming from <input matInput formControlName="origin" id="origin"  type="text" (input)="originChange()"
+      placeholder="Enter a location">
+    </mat-form-field>
+    </div>
+
+    <div class="form-field">
+      <mat-form-field >
+        Event Location: <input id="destination" matInput formControlName="destination" type="text" (input)="destinationChange()"
+        placeholder="Enter a location">
+      </mat-form-field>
+      </div>
+
+      <div class="form-field">
+        <mat-form-field >
+          Event Description <textarea  matInput formControlName="comments" placeholder="Leave a description"> </textarea>
+        </mat-form-field>
+        </div>
+
+
+    <div>
+    <mat-radio-group id="mode" formControlName="mode">
+      Mode of Travel:
+      <br>
+      <mat-radio-button value="DRIVING">Driving</mat-radio-button>
+      <mat-radio-button value="WALKING">Walking</mat-radio-button>
+      <mat-radio-button value="BICYCLING">Bicycle</mat-radio-button>
+      <mat-radio-button value="TRANSIT">Public Transport</mat-radio-button>
+    </mat-radio-group>
+    </div>
+
+  </fieldset>
+
+  <h2> Event Details</h2>
+  <fieldset>
+    <div>
+    <mat-form-field>
+      Event Starting Time: <input matInput formControlName="startDate" type="datetime-local" placeholder="start date">
+    </mat-form-field>
+    </div>
+
+    <div>
+      <mat-form-field>
+        Enter end date: <input matInput formControlName="endDate" type="datetime-local" placeholder="end date">
+      </mat-form-field>
+    </div>
+
+    <div>
+      <mat-checkbox formControlName="sendMail" >  Would you like a reminder? </mat-checkbox>
+    </div>
+  </fieldset>
+    <div>
+    <button type="submit"> Done! </button>
+    </div>
+  </form>
+
+
+</fieldset>
+
+
+

@@ -1,0 +1,27 @@
+<google-map
+  #googleMap
+  [options]="options"
+  [zoom]="zoom"
+  [center]="center">
+
+</google-map>
+
+<div *ngIf="placeDetails; else loading">
+<h2> Place Details</h2>
+
+  <div *ngIf="placeDetails.photoURL">
+    <img [src]="placeDetails.photoURL">
+  </div>
+<br>
+<h3> Name of Location : {{placeDetails.name}} </h3>
+<h3> Address : {{placeDetails.address}} </h3>
+<h3> Type of Establishment: <img [src]="placeDetails.icon"> </h3>
+</div>
+
+<ng-template #loading>
+
+  Loading location details....
+  <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+
+
+</ng-template>
