@@ -19,6 +19,7 @@ export class EventListComponent implements OnInit{
   ngOnInit() {
 
     this.userID = window.localStorage.getItem("userID") as string
+    console.log(this.userID)
     this.userID = this.activatedRoute.snapshot.queryParams['userID']
     this.userSvc.loadUserEvents(this.userID).then(events => this.eventsList = events).catch(error => console.log("Error has occured: " + error))
   }

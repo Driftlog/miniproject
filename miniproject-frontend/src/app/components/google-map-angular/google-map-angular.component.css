@@ -1,5 +1,15 @@
 
- .form-fieldset {
+.background {
+  background-image: url(/assets/photo-1507608869274-d3177c8bb4c7.avif
+  );
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+}
+
+
+
+.form-fieldset {
   width: 400px;
   margin: 0 auto
 
