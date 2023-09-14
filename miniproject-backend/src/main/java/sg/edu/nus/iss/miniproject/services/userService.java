@@ -77,7 +77,8 @@ public class userService {
         //set email content, you can use html here
         Content content = new Content();
         content.setType("text/html");
-        content.setValue("This is a reminder for your event");
+        content.setValue("You have opted for a reminder for your event on " + event.getStartDate() + " to " + event.getEndDate() + "at" 
+                    + " " + event.getLocation());
 
         //put your own email, must be verified on the website, name is optional
         Email sender = new Email("lrxjuly@gmail.com", "Mark");
