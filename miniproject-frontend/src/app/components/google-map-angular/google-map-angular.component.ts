@@ -166,7 +166,7 @@ export class GoogleMapAngularComponent implements OnInit, AfterViewInit{
     email.email = "granbluemule09@gmail.com"
     console.log(email)
 
-    this.userSvc.sendMail(email ).then(value => {
+    this.userSvc.sendMail(email).then(value => {
       console.log("email sent")
     }).catch((error) => {
       console.log(error)
