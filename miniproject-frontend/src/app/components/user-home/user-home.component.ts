@@ -17,11 +17,14 @@ export class UserHomeComponent implements OnInit{
   userSvc = inject(UserService)
   homeUser !: User
   eventList : Event[] = []
+  userID !: string
 
   constructor() {}
 
   ngOnInit() {
-    this.userSvc.loadUserDetails(window.localStorage.getItem("userID") as string).then(
+    this.userID = window.localStorage.getIteme("userID")
+    console.log(this.userID)
+    this.userSvc.loadUserDetails(this.userID).then(
       value => {
         this.homeUser = <User> value
         localStorage.setItem("calendarID", this.homeUser.calendarID)
