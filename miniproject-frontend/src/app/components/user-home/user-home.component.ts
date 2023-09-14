@@ -22,7 +22,7 @@ export class UserHomeComponent implements OnInit{
   constructor() {}
 
   ngOnInit() {
-    this.userID = window.localStorage.getIteme("userID")
+    this.userID = window.localStorage.getItem("userID") as string
     console.log(this.userID)
     this.userSvc.loadUserDetails(this.userID).then(
       value => {
