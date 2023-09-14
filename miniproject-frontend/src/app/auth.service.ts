@@ -23,7 +23,6 @@ export class AuthService {
 
   login(loginDetails: Login) {
 
-
    return firstValueFrom(this.http.post('/api/login', loginDetails))
   }
 
@@ -41,7 +40,7 @@ export class AuthService {
 
   }
 
-  
+
 
 
 

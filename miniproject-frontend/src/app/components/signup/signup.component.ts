@@ -5,6 +5,7 @@ import { AuthService } from 'src/app/auth.service';
 import { User } from '../models/User';
 import { ulid } from 'ulid';
 import { Login } from '../models/Login';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-signup',
@@ -15,6 +16,7 @@ export class SignupComponent implements OnInit{
 
   @ViewChild('file') imageFile !: ElementRef;
 
+  router = inject(Router)
   fb = inject(FormBuilder)
   appSvc = inject(AppService)
   signUpForm !: FormGroup
@@ -57,13 +59,17 @@ export class SignupComponent implements OnInit{
       console.log(value)
       const resptokenObj = <Login>value
       localStorage.setItem("token", resptokenObj.token)
-      localStorage.setItem("userID", resptokenObj.email)
+      localStorage.setItem("emailID", resptokenObj.email)
       localStorage.setItem("userID", resptokenObj.userID)
+      console.log(localStorage.getItem("token"))
+      this.router.navigate(['/userhome', localStorage.getItem("userID")])
       //put the authentication token into storage
     }).catch(
       (error) => {
         console.log(error)
       }
+
+
       //put an error message here
     )
   }

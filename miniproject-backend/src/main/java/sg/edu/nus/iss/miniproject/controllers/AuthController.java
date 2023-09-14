@@ -6,6 +6,7 @@ import java.io.InputStream;
 import java.net.URI;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 
@@ -44,7 +45,13 @@ public class AuthController {
     @PostMapping("/login")
     public ResponseEntity<Login> login(@RequestBody LoginDto loginDto) {
 
-        Login user = loginSvc.login(loginDto);
+        Login user = new Login();
+
+    try {
+        user = loginSvc.login(loginDto);}
+    catch(Exception ex) {
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new Login());
+    }
         user.setToken(userAuthProvider.createToken(user));
         return ResponseEntity.ok(user);
     }
