@@ -22,6 +22,7 @@ import jakarta.json.Json;
 import jakarta.json.JsonObject;
 import jakarta.json.JsonReader;
 import sg.edu.nus.iss.miniproject.models.Event;
+import sg.edu.nus.iss.miniproject.models.User;
 import sg.edu.nus.iss.miniproject.repos.UserRepository;
 
 @Service
@@ -33,6 +34,10 @@ public class userService {
     @Value("${sendgrid.api.key}")
     private String apiKey;
 
+
+    public Optional<User> getUser(String userID) {
+        return this.userRepo.getUserByUserID(userID);
+    }
     
     public List<Event> getEvents(String userID) {
 

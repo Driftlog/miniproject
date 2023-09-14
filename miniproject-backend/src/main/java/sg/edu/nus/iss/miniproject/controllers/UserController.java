@@ -5,6 +5,7 @@ package sg.edu.nus.iss.miniproject.controllers;
 // import java.util.Date;
 // import java.util.Optional;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -26,6 +27,7 @@ import jakarta.json.JsonArrayBuilder;
 import jakarta.json.JsonObject;
 import sg.edu.nus.iss.miniproject.models.Email;
 import sg.edu.nus.iss.miniproject.models.Event;
+import sg.edu.nus.iss.miniproject.models.User;
 import sg.edu.nus.iss.miniproject.services.userService;
 import sg.edu.nus.iss.miniproject.util.JSONConverter;
 
@@ -38,6 +40,20 @@ public class UserController {
     private userService userSvc;
 
     //implement getUser
+    @GetMapping(path = "/getUser")
+    public ResponseEntity<String> getUser(@RequestParam String userID) {
+
+        Optional<User> user = this.userSvc.getUser(userID);
+
+        if (user.isPresent() ) {
+            return ResponseEntity.ok(JSONConverter.userToJson(user.get()).toString());
+        }
+
+    
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body("ok");
+
+
+    }
 
 
     @GetMapping(path = "/getEvents")

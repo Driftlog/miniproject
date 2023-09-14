@@ -25,6 +25,18 @@ public class UserRepository {
     @Autowired
     private JdbcTemplate jdbcTemplate;
 
+    public Optional<User> getUserByUserID(String userID) {
+
+        List<User> user = jdbcTemplate.query(Constants.SQL_GET_USER, BeanPropertyRowMapper.newInstance(User.class), userID);
+
+        if (user.isEmpty()) {
+        return Optional.empty();
+       }
+
+       return Optional.of(user.get(0));
+
+    }
+
   
     public Optional<User> getUserByEmail(String email) {
         

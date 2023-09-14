@@ -3,6 +3,7 @@ package sg.edu.nus.iss.miniproject.util;
 import jakarta.json.Json;
 import jakarta.json.JsonObject;
 import sg.edu.nus.iss.miniproject.models.Event;
+import sg.edu.nus.iss.miniproject.models.User;
 
 public class JSONConverter {
     
@@ -20,6 +21,24 @@ public class JSONConverter {
 
         return respObj;
     }
+
+    public static JsonObject userToJson(User user) {
+
+
+        JsonObject respObj = Json.createObjectBuilder()
+                                .add("userID", user.getUserID())
+                                .add("userName", user.getUserName())
+                                .add("userPassword", user.getUserPassword())
+                                .add("email", user.getEmail())
+                                .add("address", user.getAddress())
+                                .add("phoneNumber", user.getPhoneNumber())
+                                .add("image", user.getImage())
+                                .add("calendarID", user.getCalendarID())
+                                .build();
+
+        return respObj;
+    }
+
 
     public static Event jsonToEvent(JsonObject jsonString) {
 

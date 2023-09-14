@@ -15,7 +15,8 @@ public class Constants {
     public final static String SQL_DELETE_RSVP_BY_EVENT_ID = "DELETE FROM rsvp where eventID = ?";
     public final static String SQL_GET_RSVP_BY_EVENT_ID = "select rsvpID from rsvp where eventID = ?";
     public final static String SQL_DELETE_RSVP = "delete from rsvp where rsvpID = ?";
-    
+    public final static String SQL_GET_USER = "select * from users where userID = ?";
+
 
 
 }

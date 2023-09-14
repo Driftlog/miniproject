@@ -25,7 +25,7 @@ export class UserService {
     const params = new HttpParams()
                     .set("userID", userID)
 
-    return firstValueFrom(this.http.get('/api/getUser', {params, headers}))
+    return firstValueFrom(this.http.get('/user/getUser', {params, headers}))
   }
 
   loadUserEvents(userID : string) : Promise<Event[]> {
