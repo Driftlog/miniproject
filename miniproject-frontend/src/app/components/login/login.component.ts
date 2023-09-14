@@ -36,17 +36,8 @@ export class LoginComponent implements OnInit{
       localStorage.setItem("email", login.email)
       localStorage.setItem("token", login.token )
       localStorage.setItem("userID", login.userID)
-
-      console.log("running into next component")
-      console.log("running into next component")
-      console.log("running into next component")
-      console.log("running into next component")
-      console.log("running into next component")
-      this.router.navigate(["/homepage", login.userID])
-
-
-
-
+      console.log(login.userID)
+      this.router.navigate(["/userhome", login.userID])
     }).catch((error) => {
       console.log(error)
       console.log(error)
