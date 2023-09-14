@@ -1,9 +1,12 @@
+<div class="background">
 
 <div class="center">
-<h1 class="title"> Sign Up Here!</h1>
 
+
+<div class="center">
 <form [formGroup]="signUpForm" (ngSubmit)="signUp()">
-
+  <fieldset>
+  <h1 class="title"> Sign Up Here!</h1>
   <div>
     <mat-form-field>
       Enter name! <input matInput formControlName="userName" type="string" >
@@ -37,9 +40,11 @@
   <div>
       Display image : <input formControlName="image" type="file" accept="image/*" #file>
   </div>
-
+  <br>
   <button type="submit"> All done! </button>
-
+</fieldset>
 </form>
-</div>
 
+</div>
+</div>
+</div>
