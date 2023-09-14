@@ -1,12 +1,14 @@
 
 h2 {
   text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .form-fieldset {
   width: 400px;
   margin: 0 auto;
   height: 100%;
+  text-align: center;
  }
 
  mat-radio-group {
@@ -18,8 +20,15 @@ h2 {
  }
 
 .background {
-  background-image: url(/assets/simon-english-48nerZQCHgo-unsplash.jpg);
-  width: 100vw;
-  height: 100vh;
+  background-image: url(/assets/fantastic-blue-sky_1203-1929.avif);
+
   background-size: cover;
+}
+
+mat-form-field {
+  text-align: center;
+}
+
+matInput {
+  text-align: center;
 }

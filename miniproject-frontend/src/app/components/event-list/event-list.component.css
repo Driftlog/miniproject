@@ -1,0 +1,15 @@
+h1 {
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.footerLink {
+  text-align: right;
+}
+
+.background {
+  background-image: url(/assets/fantastic-blue-sky_1203-1929.avif);
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+}

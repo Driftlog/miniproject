@@ -39,16 +39,13 @@ export class LoginComponent implements OnInit{
       console.log(login.userID)
       this.router.navigate(["/userhome", login.userID])
     }).catch((error) => {
-      
+
 
     })
 
   }
 
-  googleLogin() {
-
-
-  }
+  
 
 
 

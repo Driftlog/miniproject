@@ -1,11 +1,11 @@
 
-
+<div class="background">
 <h1> Event List </h1>
 
 <mat-divider></mat-divider>
 
 <div *ngIf="eventsList; else noEvents">
-<div *ngFor="let event of eventsList; let i = index">
+<div  *ngFor="let event of eventsList; let i = index">
   <mat-card>
 
     <mat-card-header>
@@ -39,6 +39,7 @@
 </div>
 
 
+
 <ng-template #noEvents>
   <h1> There doesn't seem to be any events...</h1>
 </ng-template>
@@ -50,5 +51,7 @@
 
 
 
-
+<div class="footerLink">
 <a [routerLink]="['/userhome', userID]"> Return home</a>
+</div>
+</div>
