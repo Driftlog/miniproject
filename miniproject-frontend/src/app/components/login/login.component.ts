@@ -36,9 +36,23 @@ export class LoginComponent implements OnInit{
       localStorage.setItem("email", login.email)
       localStorage.setItem("token", login.token )
       localStorage.setItem("userID", login.userID)
+
+      console.log("running into next component")
+      console.log("running into next component")
+      console.log("running into next component")
+      console.log("running into next component")
+      console.log("running into next component")
       this.router.navigate(["/homepage", login.userID])
+
+
+
+
     }).catch((error) => {
       console.log(error)
+      console.log(error)
+      console.log(error)
+      console.log(error)
+
     })
 
   }
@@ -49,8 +63,7 @@ export class LoginComponent implements OnInit{
   }
 
 
-  //this.http.post(url, { header: {.'Authorization': Bearer ${str} } })
-  //btoa(`${username}:${password}`)
+
 
 
 
