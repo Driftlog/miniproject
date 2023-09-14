@@ -8,6 +8,8 @@ COPY miniproject-frontend/package.json .
 COPY miniproject-frontend/package-lock.json .
 COPY miniproject-frontend/tsconfig.app.json .
 COPY miniproject-frontend/tsconfig.json .
+COPY miniproject-frontend/ngsw-config.json .
+
 
 RUN npm i -g @angular/cli
 RUN npm ci
