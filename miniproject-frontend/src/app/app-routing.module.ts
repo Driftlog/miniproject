@@ -18,10 +18,9 @@ const routes: Routes = [
   {path: 'displayroute/:eventID', component: DisplayrouteComponent},
   {path: 'eventlist', component: EventListComponent},
   {path: 'eventdetails/:eventID', component: EventDetailsComponent}
-
 ];
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {useHash:true})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
