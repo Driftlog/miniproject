@@ -65,7 +65,7 @@ export class EventDetailsComponent {
 
     const request = {
       query: location,
-      fields: ['photos', 'name', 'formatted_address', 'icon']
+      fields: ['photos', 'name', 'formatted_address', 'icon', 'geometry']
     }
 
     console.log("running")

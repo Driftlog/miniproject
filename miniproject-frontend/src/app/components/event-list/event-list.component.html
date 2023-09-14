@@ -4,7 +4,7 @@
 
 <mat-divider></mat-divider>
 
-<section *ngIf="eventsList; else noEvents">
+<div *ngIf="eventsList; else noEvents">
 <div *ngFor="let event of eventsList; let i = index">
   <mat-card>
 
@@ -37,7 +37,7 @@
   <button (click)="moreDetails(i)"> More Details </button>
 </div>
 
-</section>
+</div>
 
 <ng-template #noEvents>
   <p> There doesn't seem to be any events...</p>
