@@ -7,15 +7,20 @@
 </google-map>
 
 <div *ngIf="placeDetails; else loading">
-<h2> Place Details</h2>
 
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title> Place Details</mat-card-title>
+      <mat-card-subtitle> {{placeDetails.name}}</mat-card-subtitle>
+    </mat-card-header>
   <div *ngIf="placeDetails.photoURL">
     <img [src]="placeDetails.photoURL">
   </div>
-<br>
-<h3> Name of Location : {{placeDetails.name}} </h3>
+  <mat-card-content>
 <h3> Address : {{placeDetails.address}} </h3>
 <h3> Type of Establishment: <img [src]="placeDetails.icon"> </h3>
+</mat-card-content>
+  </mat-card>
 </div>
 
 <ng-template #loading>

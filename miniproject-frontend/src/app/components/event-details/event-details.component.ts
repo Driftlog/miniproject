@@ -83,6 +83,7 @@ export class EventDetailsComponent {
           this.center.lng = result.geometry.location.lng()
           const marker = new google.maps.Marker({
             position: this.center,
+            map: this.map.googleMap
           });
         }
 
@@ -94,9 +95,6 @@ export class EventDetailsComponent {
           name: results[0].name as string,
           address: results[0].formatted_address as string,
           icon: results[0].icon as string,
-
-
-
         }
 
         if (result.photos !=undefined) {
