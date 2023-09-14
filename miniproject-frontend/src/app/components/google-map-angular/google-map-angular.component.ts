@@ -161,8 +161,6 @@ export class GoogleMapAngularComponent implements OnInit, AfterViewInit{
       event: event
     }
 
-    userID = "1"
-
     email.email = "granbluemule09@gmail.com"
     console.log(email)
 
