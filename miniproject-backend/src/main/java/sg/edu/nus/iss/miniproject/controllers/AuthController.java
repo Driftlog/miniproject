@@ -50,7 +50,10 @@ public class AuthController {
     try {
         user = loginSvc.login(loginDto);}
     catch(Exception ex) {
-        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new Login());
+        Login error = new Login();
+        error.setUserID((ex.getMessage()));
+
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(error);
     }
         user.setToken(userAuthProvider.createToken(user));
         return ResponseEntity.ok(user);
