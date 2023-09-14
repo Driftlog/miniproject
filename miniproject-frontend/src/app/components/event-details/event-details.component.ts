@@ -86,15 +86,27 @@ export class EventDetailsComponent {
           });
         }
 
+
+
+
         this.placeDetails = {
 
           name: results[0].name as string,
           address: results[0].formatted_address as string,
           icon: results[0].icon as string,
 
+
+
         }
+
+        if (result.photos !=undefined) {
+          this.placeDetails.photoURL = result.photos[0].getUrl()
+        }
+
       } else { console.log(status)
       }
+
+
     })
 
   }
