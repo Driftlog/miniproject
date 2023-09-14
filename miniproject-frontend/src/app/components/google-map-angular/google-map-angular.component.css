@@ -1,13 +1,4 @@
 
-.background {
-  background-image: url(/assets/beautiful-landscape-guilin-guangxi_1417-5788.avif);
-  width: 100vw;
-  height: 100vh;
-  background-size: cover;
-}
-
-
-
 .form-fieldset {
   width: 400px;
   margin: 0 auto
