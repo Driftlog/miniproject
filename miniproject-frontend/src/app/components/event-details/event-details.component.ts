@@ -34,6 +34,7 @@ export class EventDetailsComponent {
     minZoom: 8,
   }
 
+  userID !: string
   calendarID !: string
   imageURL !: string | undefined
   @ViewChild('googleMap')
@@ -41,7 +42,10 @@ export class EventDetailsComponent {
 
   constructor() {}
 
+
   ngOnInit() {
+
+    this.userID = window.localStorage.getItem("userID") as string
     this.center = {lat : 1.3521 , lng: 103.8198}
 
     if (this.event != null) {this.initMap(this.event.location)}
@@ -113,6 +117,10 @@ export class EventDetailsComponent {
   ngAfterViewInit() {
     this.initMap(this.event.location)}
 
+
+  goHome() {
+    this.router.navigate(['/userhome', this.userID])
+  }
 
 
 
