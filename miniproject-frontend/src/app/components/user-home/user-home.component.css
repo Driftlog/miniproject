@@ -5,4 +5,17 @@
   background-size: cover;
 }
 
+h1 {
+  text-align: center;
+}
 
+
+h2 {
+  text-align: center;
+}
+
+.centerButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

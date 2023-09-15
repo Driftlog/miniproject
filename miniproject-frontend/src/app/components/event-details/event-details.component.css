@@ -24,3 +24,9 @@ button {
   height: 100vh;
   background-size: cover;
 }
+
+.gMap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
