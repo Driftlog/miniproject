@@ -17,3 +17,10 @@ button {
   align-items: center;
   justify-content: center;
 }
+
+.background {
+  background-image: url(/assets/fantastic-blue-sky_1203-1929.avif);
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+}
