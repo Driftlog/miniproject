@@ -19,3 +19,9 @@ h2 {
   align-items: center;
   justify-content: center;
 }
+
+.profilePic {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

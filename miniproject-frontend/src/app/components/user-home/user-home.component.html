@@ -1,7 +1,9 @@
 <div class="background">
 
 <div *ngIf="homeUser.image">
+<div class="profilePic">
 <img [src]="homeUser.image">
+</div>
 </div>
 <h1>Hello {{homeUser.userName}}! </h1>
 
@@ -19,6 +21,6 @@
 
 
 
-
-<button class="centerButton" (click)="logout()"> Log out</button>
+<div class="centerButton">
+<button (click)="logout()"> Log out</button>
 </div>
