@@ -161,8 +161,7 @@ export class GoogleMapAngularComponent implements OnInit, AfterViewInit{
       event: event
     }
 
-    email.email = "granbluemule09@gmail.com"
-    console.log(email)
+    
 
     this.userSvc.sendMail(email).then(value => {
       console.log("email sent")
